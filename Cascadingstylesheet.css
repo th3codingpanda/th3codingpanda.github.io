@@ -1,0 +1,23 @@
+body
+{
+background-color: #1F1F1F;
+}
+h1
+{
+    color: whitesmoke;
+}
+button
+{
+    background-color: #1F1F1F;
+    color: whitesmoke;
+}
+.gridContainter{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%; 
+    grid-auto-rows: 100px ;	
+    grid-row-start:1;
+ }
+
+  
+
+ 
