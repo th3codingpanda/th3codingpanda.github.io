@@ -1,15 +1,18 @@
 body
 {
-background-color: #1F1F1F;
+background-color: #1A1D24;
 }
 h1
 {
-    color: whitesmoke;
+    color: skyblue;
+}
+p{
+    color: skyblue
 }
 button
 {
     background-color: #1F1F1F;
-    color: whitesmoke;
+    color: skyblue;
 }
 .grid1{
     display: grid;
@@ -35,9 +38,23 @@ button
     display: flex;
     flex-direction: row;
     }
-section{
-    border: 1px solid whitesmoke;
-}
-  
 
- 
+footer{
+    text-align: center;
+    color: skyblue;
+}
+a{
+color: skyblue;
+text-decoration: none;
+font-size:larger ;
+font-family: Arial, Helvetica, sans-serif;
+}
+.test
+{
+    text-align: center;
+    font-style: bold;
+    color: #2196F3;
+}
+.align{
+text-align: center;
+}
