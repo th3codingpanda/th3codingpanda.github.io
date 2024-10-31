@@ -4,3 +4,5 @@ Day 2 i didnt do a whole lot on day 1 but on day 2 i made the website go in betw
 
 Day 3 i am noticing a patern about not doing a whole lot but then again i am doing it in the vacation
 i made the in between the pages buttons cuz i thought that looked nice. github pages D:<
+
+Day 4 reverted button and changed it to anchor because it looked better changed the background and color of the text to look better
