@@ -21,12 +21,6 @@ button
     background-color: #2196F3;
     padding: 10px;
  }
- .grid2{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%; 
-    grid-column-start:auto;
-    
- }
  .grid-draw {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
@@ -34,11 +28,25 @@ button
     
     
   }
- .flexContainter{
+  .flex-container {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: space-between;
+    background-color: #2196F3;
+    justify-content: center;
+    align-content: space-between;
+  }
+  @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+    align-content: space-between;
+    background-color: #2196F3;
+    justify-content: center;
+    align-content: space-between;
     }
-
+  }
 footer{
     text-align: center;
     color: skyblue;

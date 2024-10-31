@@ -6,3 +6,4 @@ Day 3 i am noticing a patern about not doing a whole lot but then again i am doi
 i made the in between the pages buttons cuz i thought that looked nice. github pages D:<
 
 Day 4 reverted button and changed it to anchor because it looked better changed the background and color of the text to look better
+and added images to the second page
