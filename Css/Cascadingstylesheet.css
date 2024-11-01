@@ -14,14 +14,7 @@ button
     background-color: #1F1F1F;
     color: skyblue;
 }
-.grid1{
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%; 
-    grid-auto-rows: 100px ;	
-    background-color: #2196F3;
-    padding: 10px;
-    align-self: center;
- }
+
  .grid-draw {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
@@ -78,10 +71,15 @@ a:hover{
 .align{
 text-align: center;
 }
-#container
-{
- max-width: 1400px;
- max-height: 100px;
- align-content: center;
- background-position: center;
+.grid1{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%; 
+  grid-auto-rows: 100px ;	
+  background-color: #2196F3;
+  padding: 10px;
+  max-width: 1400px;
+  max-height: 100px;
+  align-self: center;
+  align-content: center;
+  background-position: center;
 }
