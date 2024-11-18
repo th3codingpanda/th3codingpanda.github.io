@@ -22,14 +22,6 @@ p {
 .border {
   border: 1px solid #2196F3;
 }
-
-.grid-draw {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  font-size: 20px;
-  color: #1A1D24;
-}
-
 footer {
   text-align: center;
   border: 2px solid #2196F3;
@@ -69,7 +61,8 @@ img{
 .grid {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-auto-rows: 100%;
+  grid-auto-rows: 50%;
+  row-gap: 10px;
   background-color: #2196F3;
   padding: 10px;
   max-width: 1000px;
@@ -78,6 +71,12 @@ img{
   align-content: center;
   margin-left: auto;
   margin-right: auto;
+}
+.grid-draw {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  font-size: 20px;
+  color: #1A1D24;
 }
 
 @media(max-width: 800px) {

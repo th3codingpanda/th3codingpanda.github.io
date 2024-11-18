@@ -7,3 +7,5 @@ i made the in between the pages buttons cuz i thought that looked nice. github p
 
 Day 4 reverted button and changed it to anchor because it looked better changed the background and color of the text to look better
 and added images to the second page
+
+Day 7 or smht: i forgot to keep a daily planning here because i had to change the wireframe
