@@ -6,6 +6,19 @@
     <title>Dice and fold expanded Form</title>
     <link rel="stylesheet" href="../Css/Cascadingstylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function Checking()
+        {
+            var rd1 = document.getElementById("rd1")
+            var rd2 = document.getElementById("rd2")
+            var name = document.getElementById("name")
+            if(rd1.checked == true&& name.value != ""){alert("ur awsome "+name.value)}
+            else if(rd2.checked == true&&name.value != ""){alert("ur not cool "+ name.value)}
+            else if(rd1.checked == true){alert("Type in a name dumbass")}
+            else if (rd2.checked == true){alert("Type in a name dumbass")}
+        }
+
+    </script>
 </head>
 
 <body>
@@ -18,16 +31,19 @@
         <h1>hi</h1>
     </section>
     <form>
+        <p>what is your name?</p>
+        <p>
+            <input type="text" id="name" value="">
+        </p>
         <p>what did you think of this website?</p>
         <p>
-            <input type="radio" name="cool/notcool">cool
-            <input type="radio" name="cool/notcool">not cool
-            <button type="submit">submit</button>
+            <input id="rd1" type="radio" name="cool/notcool" value="cool">cool
+            <input id="rd2" type="radio" name="cool/notcool" value="not cool">not cool
+            <button onclick="Checking()" id="btn1" type="submit">submit</button>
         </p>
     </form>
     <footer>
         for more info contact me on discord username: rafje1
     </footer>
 </body>
-
 </html>
