@@ -61,7 +61,7 @@ img{
 .grid {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-auto-rows: 50%;
+  grid-auto-rows: 50% 50%;
   row-gap: 10px;
   background-color: #2196F3;
   padding: 10px;
