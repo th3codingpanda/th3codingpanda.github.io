@@ -5,15 +5,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yahtzee</title>
-    <script src="js/javascript.js"></script>
+    <script src="javascript.js"></script>
   </head>
   <body>
-    <h1>header1</h1>
-    <button type="button" onclick="roll()">dice</button><br />
-    <p id="dice1" onclick="keep_or_roll()">Dice1</p>
-    <p id="dice2">Dice2</p>
-    <p id="dice3">Dice3</p>
-    <p id="dice4">Dice4</p>
-    <p id="dice5">Dice5</p>
+    <h1>Yahtzee</h1>
+    <button type="button" onclick="roll()">dice</button>
+    <button type="button" onclick="players()">next player</button><br />
+    <button type="button">
+      <img id="dice1" onclick="keep_or_roll(this.id)" src="images/eyeless.png" alt="goku" />
+    </button>
+    <button type="button">
+        <img id="dice2" onclick="keep_or_roll(this.id)" src="images/eyeless.png" alt="goku" />
+    </button>
+    <button type="button">
+        <img id="dice3" onclick="keep_or_roll(this.id)" src="images/eyeless.png" alt="goku" />
+    </button>
+    <button type="button">
+        <img id="dice4" onclick="keep_or_roll(this.id)" src="images/eyeless.png" alt="goku" />
+    </button>
+    <button type="button">
+        <img id="dice5" onclick="keep_or_roll(this.id)" src="images/eyeless.png" alt="goku" />
+    </button>
   </body>
 </html>
+<p></p>
