@@ -1,46 +1,23 @@
 const numbers = [0, 0, 0, 0, 0];
-var dice_numbers = 0;
-
+const id = ["dice1", "dice2", "dice3", "dice4", "dice5"];
+const reroll = [true, true, true, true, true];
+console.log(arr1);
 function roll() {
-  for (var i = 0; i <5; i++) {
-    var dice = Math.floor(Math.random() * 6) + 1;
-    switch (dice) {
-      case 1:
-        numbers[dice_numbers] = dice;
-        dice_numbers++;
-        break;
-      case 2:
-        numbers[dice_numbers] = dice;
-        dice_numbers++;
-        break;
-      case 3:
-        numbers[dice_numbers] = dice;
-        dice_numbers++;
-        break;
-      case 4:
-        numbers[dice_numbers] = dice;
-        dice_numbers++;
-        break;
-      case 5:
-        numbers[dice_numbers] = dice;
-        dice_numbers++;
-        break;
-      case 6:
-        numbers[dice_numbers] = dice;
-        dice_numbers++;
-        break;
+  // Roll dice and store result :D
+  for (let i = 0; i < 5; i++) {
+    if (reroll[i]) {
+      numbers[i] = Math.floor(Math.random() * 6) + 1;
     }
   }
-  dice_numbers=0;
-  document.getElementById("p1").innerHTML =
-    "dice 1=" +
-    numbers[0] +
-    "dice 2=" +
-    numbers[1] +
-    "dice 3=" +
-    numbers[2] +
-    "dice 4=" +
-    numbers[3] +
-    "dice 5=" +
-    numbers[4]
+  update();
+}
+function update() {
+  for (let j = 0; j < 5; j++) {
+    let dice = "Dice" + (j + 1) + " = ";
+    document.getElementById(id[j]).innerHTML = dice + numbers[j];
+  }
+}
+function keep_or_roll()
+{
+
 }
