@@ -1,5 +1,6 @@
 const numbers = [0, 0, 0, 0, 0];
 const id = ["dice1", "dice2", "dice3", "dice4", "dice5"];
+const button_id = ["button1","button2","button3","button4","button5"]
 const reroll = [true, true, true, true, true];
 const number_rolled = [
   "images/eyeless.png",
@@ -40,6 +41,7 @@ function keep_or_roll(dice_clicked) {
       }
     }
   }
+  update();
 }
 function players() {
   //if(turn_ended == true){
@@ -53,6 +55,7 @@ function players() {
     reroll[i] = true;
     numbers[i] = 0;
   }
+  document.getElementById("playerturn").innerHTML = "Playerturn = " + playerturn;
   update();
   //}
 }
@@ -62,6 +65,11 @@ function update() {
     console.log(dice);
     document.getElementById(id[j]).src = number_rolled[numbers[j]];
     document.getElementById(id[j]).alt = dice;
-    //id[j].setAttribute("src",);
+    if(!reroll[j])
+      {
+        document.getElementById(button_id[j]).className = "pressed"
+      }
+      else{document.getElementById(button_id[j]).className = "not_pressed"}
+    
   }
 }

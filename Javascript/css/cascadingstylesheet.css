@@ -2,3 +2,5 @@ h1 {
   color: blue;
   text-align: center;
 }
+.pressed{background-color: gray;}
+.not_pressed{background-color: whitesmoke;}
