@@ -19,9 +19,9 @@ const lower_section = [0, 0, false, false, false, , false, 0, false];
 sequence of 5(12345/23456) 5 of a kind, chance any dice added together,
  5 of a kind if 5 of a kind is filled */
 let playerturn = 1;
-let amountplayers = 2;
+let amountplayers = 1;
 let turn_ended = false;
-
+var numberplayersselected = 0;
 function roll() {
   // Roll dice and store result :D
   if (times_rolled < 3) {
@@ -32,7 +32,8 @@ function roll() {
     }
     times_rolled++;
     document.getElementById("turnsleft").innerHTML =
-      "Turns left " + (3 - times_rolled);
+      "Turns left: " + (3 - times_rolled);
+
     update();
   }
 }
@@ -54,8 +55,12 @@ function players() {
   times_rolled = 0;
   if (playerturn == amountplayers) {
     playerturn = 1;
+    console.log("Player=" + playerturn);
+    console.log("Playeramount=" + amountplayers);
   } else {
     playerturn++;
+    console.log("Player=" + playerturn);
+    console.log("Playeramount=" + amountplayers);
   }
   for (let i = 0; i < 5; i++) {
     reroll[i] = true;
@@ -64,7 +69,7 @@ function players() {
   document.getElementById("playerturn").innerHTML =
     "Playerturn = " + playerturn;
   document.getElementById("turnsleft").innerHTML =
-    "Turns left " + (3 - times_rolled);
+    "Turns left: " + (3 - times_rolled);
   update();
   //}
 }
@@ -81,7 +86,23 @@ function update() {
     }
   }
 }
-function selectplayers(){
-  const element = document.getElementById("playersselect");
-element.remove();
+function selectplayersamount() {
+  numberplayersselected = document.getElementById("inputtext1").value;
+  if (isNaN(numberplayersselected)) {
+    alert("Input a valid number");
+    console.log(numberplayersselected);
+  } else {
+    window.location.href = "yahtzee.html";
+    console.log(numberplayersselected);
+    amountplayers = Math.floor(numberplayersselected);
+    console.log(amountplayers);
+  }
+}
+function darklightmode() {
+  var currently = document.getElementById("body").className;
+  if (currently == "lightmode") {
+    document.getElementById("body").className = "darkmode";
+  } else if (currently == "darkmode") {
+    document.getElementById("body").className = "lightmode";
+  }
 }

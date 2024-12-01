@@ -7,53 +7,11 @@
     <title>Yahtzee</title>
     <script src="javascript.js"></script>
   </head>
-  <body>
-    <input type="text" id="playersselect" onsubmit="selectplayers">
-    <button type="submit" onclick="selectplayers">submit</button>
-    <h1 id="playerturn">Playerturn = 1</h1>
-    <h1 id="turnsleft">Turns left:3</h1>
-    <button type="button" onclick="roll()">dice</button>
-    <button type="button" onclick="players()">next player</button><br />
-    <button type="button" id="button1" class="not_pressed">
-      <img
-        id="dice1"
-        onclick="keep_or_roll(this.id)"
-        src="images/eyeless.png"
-        alt="goku"
-      />
-    </button>
-    <button type="button" id="button2" class="not_pressed">
-      <img
-        id="dice2"
-        onclick="keep_or_roll(this.id)"
-        src="images/eyeless.png"
-        alt="goku"
-      />
-    </button>
-    <button type="button" id="button3" class="not_pressed">
-      <img
-        id="dice3"
-        onclick="keep_or_roll(this.id)"
-        src="images/eyeless.png"
-        alt="goku"
-      />
-    </button>
-    <button type="button" id="button4" class="not_pressed">
-      <img
-        id="dice4"
-        onclick="keep_or_roll(this.id)"
-        src="images/eyeless.png"
-        alt="goku"
-      />
-    </button>
-    <button type="button" id="button5" class="not_pressed">
-      <img
-        id="dice5"
-        onclick="keep_or_roll(this.id)"
-        src="images/eyeless.png"
-        alt="goku"
-      />
-    </button>
+  <body id="body" class="lightmode">
+    <input type="checkbox" id="dark-lightmode" onclick="darklightmode()" />
+    <label for="dark-lightmode"></label>
+    <h1>Choose player amount</h1>
+    <input type="text" id="inputtext1">
+    <button type="submit" onclick="selectplayersamount()">Sumbit</button>
   </body>
 </html>
-<p></p>
