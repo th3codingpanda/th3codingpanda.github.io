@@ -52,3 +52,7 @@ input[type="checkbox"]:checked + label::after {
   transition: 1s;
   background-color: #1a1d24;
 }
+.scoreboard {
+  color: rgb(45, 155, 124);
+  border: solid rgb(45, 155, 124) 5px;
+}
