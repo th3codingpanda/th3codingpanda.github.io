@@ -1,3 +1,4 @@
+let amountplayers = localStorage.getItem("amountplayers");
 const numbers = [0, 0, 0, 0, 0];
 const id = ["dice1", "dice2", "dice3", "dice4", "dice5"];
 const button_id = ["button1", "button2", "button3", "button4", "button5"];
@@ -19,7 +20,7 @@ const lower_section = [0, 0, false, false, false, , false, 0, false];
 sequence of 5(12345/23456) 5 of a kind, chance any dice added together,
  5 of a kind if 5 of a kind is filled */
 let playerturn = 1;
-let amountplayers = 1;
+
 let turn_ended = false;
 var numberplayersselected = 0;
 function roll() {
@@ -94,7 +95,7 @@ function selectplayersamount() {
   } else {
     window.location.href = "yahtzee.html";
     console.log(numberplayersselected);
-    amountplayers = Math.floor(numberplayersselected);
+    localStorage.setItem("amountplayers", Math.floor(numberplayersselected));
     console.log(amountplayers);
   }
 }
