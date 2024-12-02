@@ -14,9 +14,9 @@ const number_rolled = [
   "images/six_eyes.png",
 ];
 let times_rolled = 0;
-const upper_section = [][0, 0, 0, 0, 0, 0, false];
+const upper_section = [][(0, 0, 0, 0, 0, 0, false)];
 // 1 2 3 4 5 6 check if score is 63 or above and reward 35 points
-const lower_section = [][0, 0, false, false, false,false, 0, false];
+const lower_section = [][(0, 0, false, false, false, false, 0, false)];
 /* 3 of a kind, 4 of a kind ,3 and 2 of a kind , sequence of 4 (1234/2345/3456), 
 sequence of 5(12345/23456) 5 of a kind, chance any dice added together,
  5 of a kind if 5 of a kind is filled */
@@ -125,8 +125,8 @@ function darklightmodestartup() {
     document.getElementById("dark-lightmode").checked = false;
   }
 }
-function scoreboardupdate(){
-  for(let i = 0; i<7; i++){
-console.log(upper_section[playerturn[i]])
-}
+function scoreboardupdate() {
+  for (let i = 0; i < 7; i++) {
+    console.log(upper_section[playerturn[i]]);
+  }
 }
