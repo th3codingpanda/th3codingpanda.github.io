@@ -1,4 +1,5 @@
 let amountplayers = localStorage.getItem("amountplayers");
+let darkmode = localStorage.getItem("darkmode");
 const numbers = [0, 0, 0, 0, 0];
 const id = ["dice1", "dice2", "dice3", "dice4", "dice5"];
 const button_id = ["button1", "button2", "button3", "button4", "button5"];
@@ -89,7 +90,7 @@ function update() {
 }
 function selectplayersamount() {
   numberplayersselected = document.getElementById("inputtext1").value;
-  if (isNaN(numberplayersselected)) {
+  if (isNaN(numberplayersselected)|| numberplayersselected<= 0) {
     alert("Input a valid number");
     console.log(numberplayersselected);
   } else {
@@ -103,7 +104,24 @@ function darklightmode() {
   var currently = document.getElementById("body").className;
   if (currently == "lightmode") {
     document.getElementById("body").className = "darkmode";
+    localStorage.setItem("darkmode", true);
+    darkmode = localStorage.getItem("darkmode");
+    console.log("darkmode=" + darkmode);
   } else if (currently == "darkmode") {
     document.getElementById("body").className = "lightmode";
+    localStorage.setItem("darkmode", false);
+    darkmode = localStorage.getItem("darkmode");
+    console.log("darkmode=" + darkmode);
+  }
+}
+function darklightmodestartup() {
+  if (darkmode == "true") {
+    document.getElementById("body").className = "darkmode";
+    document.getElementById("dark-lightmode").checked = true;
+    console.log("gojo");
+  } else {
+    document.getElementById("body").className = "lightmode";
+    console.log("goku");
+    document.getElementById("dark-lightmode").checked = false;
   }
 }
