@@ -1,6 +1,7 @@
 let amountplayers = localStorage.getItem("amountplayers");
 let darkmode = localStorage.getItem("darkmode");
 const numbers = [0, 0, 0, 0, 0];
+const numberseyes = [0, 0, 0, 0, 0, 0];
 const id = ["dice1", "dice2", "dice3", "dice4", "dice5"];
 const button_id = ["button1", "button2", "button3", "button4", "button5"];
 const reroll = [true, true, true, true, true];
@@ -14,7 +15,10 @@ const number_rolled = [
   "images/six_eyes.png",
 ];
 let times_rolled = 0;
-const upper_section = [][(0, 0, 0, 0, 0, 0, false)];
+let total_uppersection = 0;
+let total_lowersection = 0;
+let total = 0;
+
 // 1 2 3 4 5 6 check if score is 63 or above and reward 35 points
 const lower_section = [][(0, 0, false, false, false, false, 0, false)];
 /* 3 of a kind, 4 of a kind ,3 and 2 of a kind , sequence of 4 (1234/2345/3456), 
@@ -51,6 +55,7 @@ function keep_or_roll(dice_clicked) {
     }
   }
   update();
+  //
 }
 function players() {
   //if(turn_ended == true){
@@ -73,7 +78,7 @@ function players() {
   document.getElementById("turnsleft").innerHTML =
     "Turns left: " + (3 - times_rolled);
   update();
-  //}
+  //Keeps turns in check and if it should reroll or not
 }
 function update() {
   for (let j = 0; j < 5; j++) {
@@ -87,6 +92,8 @@ function update() {
       document.getElementById(button_id[j]).className = "not_pressed";
     }
   }
+  scoreboardtally();
+  //Updates dice and if it can reroll or not
 }
 function selectplayersamount() {
   numberplayersselected = document.getElementById("inputtext1").value;
@@ -99,6 +106,7 @@ function selectplayersamount() {
     localStorage.setItem("amountplayers", Math.floor(numberplayersselected));
     console.log(amountplayers);
   }
+  //checks  amount of players selected
 }
 function darklightmode() {
   var currently = document.getElementById("body").className;
@@ -113,20 +121,54 @@ function darklightmode() {
     darkmode = localStorage.getItem("darkmode");
     console.log("darkmode=" + darkmode);
   }
+  //toggles dark or light mode
 }
 function darklightmodestartup() {
   if (darkmode == "true") {
     document.getElementById("body").className = "darkmode";
-    document.getElementById("dark-lightmode").checked = true;
+    if (typeof index !== "undefined") {
+      document.getElementById("dark-lightmode").checked = true;
+    }
     console.log("gojo");
   } else {
     document.getElementById("body").className = "lightmode";
     console.log("goku");
     document.getElementById("dark-lightmode").checked = false;
   }
+  //remembers what last theme was and changes it to that
+}
+function scoreboardtally() {
+  for (let i = 0; i < 6; i++) {
+    numberseyes[i] = 0;
+  }
+  for (let i = 0; i < 5; i++) {
+    if (numbers[i] == 1) {
+      numberseyes[0]++;
+    } else if (numbers[i] == 2) {
+      numberseyes[1]++;
+    } else if (numbers[i] == 3) {
+      numberseyes[2]++;
+    } else if (numbers[i] == 4) {
+      numberseyes[3]++;
+    } else if (numbers[i] == 5) {
+      numberseyes[4]++;
+    } else if (numbers[i] == 6) {
+      numberseyes[5]++;
+    }
+  }
+  console.log(numberseyes);
+  scoreboardupdate();
 }
 function scoreboardupdate() {
-  for (let i = 0; i < 7; i++) {
-    console.log(upper_section[playerturn[i]]);
-  }
+  let array = document.getElementsByClassName("upper_scoreboard");
+  array[0].innerHTML = "Total 1's: " + numberseyes[0] * 1;
+  array[1].innerHTML = "Total 2's: " + numberseyes[1] * 2;
+  array[2].innerHTML = "Total 3's: " + numberseyes[2] * 3;
+  array[3].innerHTML = "Total 4's: " + numberseyes[3] * 4;
+  array[4].innerHTML = "Total 5's: " + numberseyes[4] * 5;
+  array[5].innerHTML = "Total 6's: " + numberseyes[5] * 6;
+  array[6].innerHTML = "Bonus(63+): ";
+  array[7].innerHTML = "Total upper section: " + total_uppersection;
+  array[8].innerHTML = "Total: " + total;
 }
+function scoreboard() {}

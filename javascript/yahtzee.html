@@ -11,7 +11,7 @@
     <h1 id="playerturn">Playerturn = 1</h1>
     <h1 id="turnsleft">Turns left: 3</h1>
     <button type="button" onclick="roll()">dice</button>
-    <button type="button" onclick="players()">next player</button><br/>
+    <button type="button" onclick="players()">next player</button><br />
     <button type="button" id="button1" class="not_pressed">
       <img
         id="dice1"
@@ -52,9 +52,33 @@
         alt="goku"
       />
     </button>
-    <div class="scoreboard"><p>Total 1's</p></div>
+    <div class="scoreboard">
+      <div class="scoreboardleft">
+        <p class="upper_scoreboard">Total 1's:</p>
+        <p class="upper_scoreboard">Total 2's:</p>
+        <p class="upper_scoreboard">Total 3's:</p>
+        <p class="upper_scoreboard">Total 4's:</p>
+        <p class="upper_scoreboard">Total 5's:</p>
+        <p class="upper_scoreboard">Total 6's:</p>
+        <p class="upper_scoreboard">Bonus(if 63+):</p>
+        <p class="upper_scoreboard">Total upper section:</p>
+        <p class="upper_scoreboard">Total:</p>
+      </div>
+      <div class="scoreboardright">
+        <p class="lower_scoreboard">Three of a kind:</p>
+        <p class="lower_scoreboard">Four of a kind:</p>
+        <p class="lower_scoreboard">Full house:</p>
+        <p class="lower_scoreboard">Small straight:</p>
+        <p class="lower_scoreboard">Large straight:</p>
+        <p class="lower_scoreboard">Yahtzee:</p>
+        <p class="lower_scoreboard">Chance:</p>
+        <p class="lower_scoreboard">Bonus Yahtzee:</p>
+        <p class="lower_scoreboard">Total Lower section:</p>
+      </div>
+    </div>
     <script>
       darklightmodestartup();
+      scoreboardupdate();
     </script>
   </body>
 </html>

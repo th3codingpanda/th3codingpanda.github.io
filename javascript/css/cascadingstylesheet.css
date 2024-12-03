@@ -55,4 +55,12 @@ input[type="checkbox"]:checked + label::after {
 .scoreboard {
   color: rgb(45, 155, 124);
   border: solid rgb(45, 155, 124) 5px;
+  width: 90vw;
+  display: flex;
+}
+.scoreboardleft {
+  width: 50%;
+}
+.scoreboardright {
+  width: 50%;
 }
