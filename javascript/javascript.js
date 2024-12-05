@@ -165,33 +165,45 @@ function scoreboardtally() {
 function scoreboardupdate() {
   let array = document.getElementsByClassName("upper_scoreboard");
   if (score_used[0][playerturn - 1][0] == false) {
+    array[0].style = "text-decoration:none;";
     array[0].innerHTML = "Total 1's: " + numberseyes[0] * 1 + " ";
   } else {
+    array[0].style = "text-decoration:line-through;";
     array[0].innerHTML = "Total 1's: " + score[0][playerturn - 1][0];
   }
   if (score_used[0][playerturn - 1][1] == false) {
+    array[1].style = "text-decoration:none;";
     array[1].innerHTML = "Total 2's: " + numberseyes[1] * 2 + " ";
   } else {
+    array[1].style = "text-decoration:line-through;";
     array[1].innerHTML = "Total 2's: " + score[0][playerturn - 1][1];
   }
   if (score_used[0][playerturn - 1][2] == false) {
+    array[2].style = "text-decoration:none;";
     array[2].innerHTML = "Total 3's: " + numberseyes[2] * 3 + " ";
   } else {
+    array[2].style = "text-decoration:line-through;";
     array[2].innerHTML = "Total 3's: " + score[0][playerturn - 1][2];
   }
   if (score_used[0][playerturn - 1][3] == false) {
+    array[3].style = "text-decoration:none;";
     array[3].innerHTML = "Total 4's: " + numberseyes[3] * 4 + " ";
   } else {
+    array[3].style = "text-decoration:line-through;";
     array[3].innerHTML = "Total 4's: " + score[0][playerturn - 1][3];
   }
   if (score_used[0][playerturn - 1][4] == false) {
+    array[4].style = "text-decoration:none;";
     array[4].innerHTML = "Total 5's: " + numberseyes[4] * 5 + " ";
   } else {
+    array[4].style = "text-decoration:line-through;";
     array[4].innerHTML = "Total 5's: " + score[0][playerturn - 1][4];
   }
   if (score_used[0][playerturn - 1][5] == false) {
+    array[5].style = "text-decoration:none;";
     array[5].innerHTML = "Total 6's: " + numberseyes[5] * 6 + " ";
   } else {
+    array[5].style = "text-decoration:line-through;";
     array[5].innerHTML = "Total 6's: " + score[0][playerturn - 1][5];
   }
   if (score_used[0][playerturn - 1][6] == false) {
@@ -216,6 +228,27 @@ function scoreboard(pressed) {
             activated = true;
             console.log(i + 1 + " " + score[i]);
           }
+        //if(total_uppersection>=63){
+        //
+        //}
+      }
+      if (score_used[1][playerturn - 1][i] == false) {
+        if (pressed == "lower_scoreboard: " + (i + 1)) {
+          if (i == 0) {
+            if (numberseyes[i] == 3) {
+            }
+          }
+          if (i == 1) {
+          }
+          if (i == 2) {
+          }
+          if (i == 3) {
+          }
+          if (i == 4) {
+          }
+          if (i == 5) {
+          }
+        }
       }
     }
     if (activated) {
