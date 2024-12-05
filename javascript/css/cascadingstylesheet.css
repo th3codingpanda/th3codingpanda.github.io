@@ -64,3 +64,9 @@ input[type="checkbox"]:checked + label::after {
 .scoreboardright {
   width: 50%;
 }
+.upper_scoreboard:hover {
+  color: #d8860b;
+}
+.lower_scoreboard:hover {
+  color: #d8860b;
+}

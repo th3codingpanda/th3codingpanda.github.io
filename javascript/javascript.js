@@ -18,12 +18,15 @@ let times_rolled = 0;
 let total_uppersection = 0;
 let total_lowersection = 0;
 let total = 0;
+let score = [];
+let score_used = [];
+score[0] = [];
+score[1] = [];
+score_used[0] = [];
+score_used[1] = [];
 
-// 1 2 3 4 5 6 check if score is 63 or above and reward 35 points
-const lower_section = [][(0, 0, false, false, false, false, 0, false)];
-/* 3 of a kind, 4 of a kind ,3 and 2 of a kind , sequence of 4 (1234/2345/3456), 
-sequence of 5(12345/23456) 5 of a kind, chance any dice added together,
- 5 of a kind if 5 of a kind is filled */
+const lower_section = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 let playerturn = 1;
 
 let turn_ended = false;
@@ -37,9 +40,6 @@ function roll() {
       }
     }
     times_rolled++;
-    document.getElementById("turnsleft").innerHTML =
-      "Turns left: " + (3 - times_rolled);
-
     update();
   }
 }
@@ -58,27 +58,26 @@ function keep_or_roll(dice_clicked) {
   //
 }
 function players() {
-  //if(turn_ended == true){
-  times_rolled = 0;
-  if (playerturn == amountplayers) {
-    playerturn = 1;
-    console.log("Player=" + playerturn);
-    console.log("Playeramount=" + amountplayers);
-  } else {
-    playerturn++;
-    console.log("Player=" + playerturn);
-    console.log("Playeramount=" + amountplayers);
+  if (turn_ended == true) {
+    times_rolled = 0;
+    if (playerturn == amountplayers) {
+      playerturn = 1;
+      console.log("Player=" + playerturn);
+      console.log("Playeramount=" + amountplayers);
+      turn_ended = false;
+    } else {
+      playerturn++;
+      console.log("Player=" + playerturn);
+      console.log("Playeramount=" + amountplayers);
+      turn_ended = false;
+    }
+
+    for (let i = 0; i < 5; i++) {
+      reroll[i] = true;
+      numbers[i] = 0;
+    }
+    update();
   }
-  for (let i = 0; i < 5; i++) {
-    reroll[i] = true;
-    numbers[i] = 0;
-  }
-  document.getElementById("playerturn").innerHTML =
-    "Playerturn = " + playerturn;
-  document.getElementById("turnsleft").innerHTML =
-    "Turns left: " + (3 - times_rolled);
-  update();
-  //Keeps turns in check and if it should reroll or not
 }
 function update() {
   for (let j = 0; j < 5; j++) {
@@ -92,6 +91,10 @@ function update() {
       document.getElementById(button_id[j]).className = "not_pressed";
     }
   }
+  document.getElementById("turnsleft").innerHTML =
+    "Turns left: " + (3 - times_rolled);
+  document.getElementById("playerturn").innerHTML =
+    "Playerturn = " + playerturn;
   scoreboardtally();
   //Updates dice and if it can reroll or not
 }
@@ -129,10 +132,10 @@ function darklightmodestartup() {
     if (typeof index !== "undefined") {
       document.getElementById("dark-lightmode").checked = true;
     }
-    console.log("gojo");
+    console.log("Darkmode = true");
   } else {
     document.getElementById("body").className = "lightmode";
-    console.log("goku");
+    console.log("Darkmode = false");
     document.getElementById("dark-lightmode").checked = false;
   }
   //remembers what last theme was and changes it to that
@@ -161,14 +164,100 @@ function scoreboardtally() {
 }
 function scoreboardupdate() {
   let array = document.getElementsByClassName("upper_scoreboard");
-  array[0].innerHTML = "Total 1's: " + numberseyes[0] * 1;
-  array[1].innerHTML = "Total 2's: " + numberseyes[1] * 2;
-  array[2].innerHTML = "Total 3's: " + numberseyes[2] * 3;
-  array[3].innerHTML = "Total 4's: " + numberseyes[3] * 4;
-  array[4].innerHTML = "Total 5's: " + numberseyes[4] * 5;
-  array[5].innerHTML = "Total 6's: " + numberseyes[5] * 6;
-  array[6].innerHTML = "Bonus(63+): ";
-  array[7].innerHTML = "Total upper section: " + total_uppersection;
-  array[8].innerHTML = "Total: " + total;
+  if (score_used[0][playerturn - 1][0] == false) {
+    array[0].innerHTML = "Total 1's: " + numberseyes[0] * 1 + " ";
+  } else {
+    array[0].innerHTML = "Total 1's: " + score[0][playerturn - 1][0];
+  }
+  if (score_used[0][playerturn - 1][1] == false) {
+    array[1].innerHTML = "Total 2's: " + numberseyes[1] * 2 + " ";
+  } else {
+    array[1].innerHTML = "Total 2's: " + score[0][playerturn - 1][1];
+  }
+  if (score_used[0][playerturn - 1][2] == false) {
+    array[2].innerHTML = "Total 3's: " + numberseyes[2] * 3 + " ";
+  } else {
+    array[2].innerHTML = "Total 3's: " + score[0][playerturn - 1][2];
+  }
+  if (score_used[0][playerturn - 1][3] == false) {
+    array[3].innerHTML = "Total 4's: " + numberseyes[3] * 4 + " ";
+  } else {
+    array[3].innerHTML = "Total 4's: " + score[0][playerturn - 1][3];
+  }
+  if (score_used[0][playerturn - 1][4] == false) {
+    array[4].innerHTML = "Total 5's: " + numberseyes[4] * 5 + " ";
+  } else {
+    array[4].innerHTML = "Total 5's: " + score[0][playerturn - 1][4];
+  }
+  if (score_used[0][playerturn - 1][5] == false) {
+    array[5].innerHTML = "Total 6's: " + numberseyes[5] * 6 + " ";
+  } else {
+    array[5].innerHTML = "Total 6's: " + score[0][playerturn - 1][5];
+  }
+  if (score_used[0][playerturn - 1][6] == false) {
+    array[6].innerHTML = "Bonus(63+): ";
+  }
+  if (score_used[0][playerturn - 1][7] == false) {
+    array[7].innerHTML = "Total upper section: " + total_uppersection;
+  }
+  if (score_used[0][playerturn - 1][8] == false) {
+    array[8].innerHTML = "Total: " + total;
+  }
 }
-function scoreboard() {}
+function scoreboard(pressed) {
+  let activated = false;
+  if (!turn_ended) {
+    for (let i = 0; i < 9; i++) {
+      if (score_used[0][playerturn - 1][i] == false) {
+        if (pressed == "upper_scoreboard: " + (i + 1))
+          if (i < 6) {
+            score[0][playerturn - 1][i] = numberseyes[i] * (i + 1);
+            score_used[0][playerturn - 1][i] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[i]);
+          }
+      }
+    }
+    if (activated) {
+      turn_ended = true;
+      times_rolled = 3;
+      update();
+    }
+  }
+}
+function initiate() {
+  for (let i = 0; i < amountplayers; i++) {
+    score[0].push(i);
+    score[1].push(i);
+    score_used[0].push(i);
+    score_used[1].push(i);
+    score[0][i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    score[1][i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    score_used[0][i] = [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+    ];
+    score_used[1][i] = [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+    ];
+    console.log(i + 1 + " " + score[0][i]);
+    console.log(i + 1 + " " + score[1][i]);
+    console.log(i + 1 + " " + score_used[0][i]);
+    console.log(i + 1 + " " + score_used[1][i]);
+  }
+}
