@@ -2,6 +2,8 @@ let amountplayers = localStorage.getItem("amountplayers");
 let darkmode = localStorage.getItem("darkmode");
 const numbers = [0, 0, 0, 0, 0];
 const numberseyes = [0, 0, 0, 0, 0, 0];
+const specials = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+//bonus 3 and 4 of a kind, small and large straight, full house chance, yahtzee and bonus yahtzee.
 const id = ["dice1", "dice2", "dice3", "dice4", "dice5"];
 const button_id = ["button1", "button2", "button3", "button4", "button5"];
 const reroll = [true, true, true, true, true];
@@ -144,6 +146,9 @@ function scoreboardtally() {
   for (let i = 0; i < 6; i++) {
     numberseyes[i] = 0;
   }
+  for (let i = 0; i < 9; i++) {
+    specials[i] = 0;
+  }
   for (let i = 0; i < 5; i++) {
     if (numbers[i] == 1) {
       numberseyes[0]++;
@@ -159,11 +164,31 @@ function scoreboardtally() {
       numberseyes[5]++;
     }
   }
+  for (let i = 0; i < 6; i++) {
+    if (numberseyes[i] == 3) {
+      specials[0] = numberseyes[i] * (i + 1);
+      console.log("Three of a kind");
+    }
+    if (numberseyes[i] == 4){
+      specials[1] = numberseyes[i] * (i + 1);
+      console.log("Four of a kind");
+    }
+    if (numberseyes[i] == 5){
+      specials[5] = 50
+      console.log("Yahtzee");
+    }
+    if (numberseyes[i] == 5 && score_used[1][playerturn-1][5]== true){
+      specials[7] = 100
+      console.log("BONUS Yahtzee");
+    }
+  }
+
   console.log(numberseyes);
   scoreboardupdate();
 }
 function scoreboardupdate() {
   let array = document.getElementsByClassName("upper_scoreboard");
+  let array2 = document.getElementsByClassName("lower_scoreboard");
   if (score_used[0][playerturn - 1][0] == false) {
     array[0].style = "text-decoration:none;";
     array[0].innerHTML = "Total 1's: " + numberseyes[0] * 1 + " ";
@@ -215,6 +240,26 @@ function scoreboardupdate() {
   if (score_used[0][playerturn - 1][8] == false) {
     array[8].innerHTML = "Total: " + total;
   }
+  if (score_used[1][playerturn - 1][0] == false) {
+    array2[0].style = "text-decoration:none;";
+    array2[0].innerHTML = "Three of a kind: " + specials[0];
+  } else {
+    array2[0].style = "text-decoration:line-through;";
+    array2[0].innerHTML = "Three of a kind: " + score[1][playerturn - 1][0];
+  }
+  if (score_used[1][playerturn - 1][1] == false) {
+    array2[1].style = "text-decoration:none;";
+    array2[1].innerHTML = "Four of a kind: " + specials[1];
+  } else {
+    array2[1].style = "text-decoration:line-through;";
+    array2[1].innerHTML = "Four of a kind: " + score[1][playerturn - 1][1];
+  }
+  if(score_used[1][playerturn - 1][2] == false){
+    array2[2].style = "text-decoration:none;";
+    array2[2].innerHTML = "Four of a kind: " + specials[2];
+  }
+  // todo add bonus ,total upper section ,total lower section ,total ,4 of a kind
+  // full house, small straight, large straight, yahtzee, bonus yahtzee , chance
 }
 function scoreboard(pressed) {
   let activated = false;
@@ -228,17 +273,21 @@ function scoreboard(pressed) {
             activated = true;
             console.log(i + 1 + " " + score[i]);
           }
-        //if(total_uppersection>=63){
-        //
-        //}
       }
+      // upperscore above lowerscore below
       if (score_used[1][playerturn - 1][i] == false) {
         if (pressed == "lower_scoreboard: " + (i + 1)) {
           if (i == 0) {
-            if (numberseyes[i] == 3) {
-            }
+            score[1][playerturn - 1][0] = specials[0];
+            score_used[1][playerturn - 1][0] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 1) {
+            score[1][playerturn - 1][1] = specials[1];
+            score_used[1][playerturn - 1][1] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 2) {
           }
@@ -251,13 +300,14 @@ function scoreboard(pressed) {
         }
       }
     }
-    if (activated) {
-      turn_ended = true;
-      times_rolled = 3;
-      update();
-    }
+  }
+  if (activated) {
+    turn_ended = true;
+    times_rolled = 3;
+    update();
   }
 }
+
 function initiate() {
   for (let i = 0; i < amountplayers; i++) {
     score[0].push(i);
@@ -266,6 +316,9 @@ function initiate() {
     score_used[1].push(i);
     score[0][i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
     score[1][i] = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    // score 0 logs upperscore and 1 logs lowerscoreboard
+    // log from left to right 1 2 3 4 5 6 bonus total upper section and total
+    //log from left to right 3 of a kind, 4 of a kind, full house, small straight, large straight, yahtzee chance bonus yahtzee
     score_used[0][i] = [
       false,
       false,
