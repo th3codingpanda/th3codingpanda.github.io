@@ -2,8 +2,8 @@ let amountplayers = localStorage.getItem("amountplayers");
 let darkmode = localStorage.getItem("darkmode");
 const numbers = [0, 0, 0, 0, 0];
 const numberseyes = [0, 0, 0, 0, 0, 0];
-const specials = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-//bonus 3 and 4 of a kind, small and large straight, full house chance, yahtzee and bonus yahtzee.
+const specials = [0, 0, 0, 0, 0, 0, 0, 0];
+//3 and 4 of a kind, small and large straight, full house chance, yahtzee and bonus yahtzee.
 const id = ["dice1", "dice2", "dice3", "dice4", "dice5"];
 const button_id = ["button1", "button2", "button3", "button4", "button5"];
 const reroll = [true, true, true, true, true];
@@ -26,8 +26,7 @@ score[0] = [];
 score[1] = [];
 score_used[0] = [];
 score_used[1] = [];
-
-const lower_section = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+let yahtzee_happend_this_turn = false;
 
 let playerturn = 1;
 
@@ -169,17 +168,53 @@ function scoreboardtally() {
       specials[0] = numberseyes[i] * (i + 1);
       console.log("Three of a kind");
     }
-    if (numberseyes[i] == 4){
+    if (numberseyes[i] == 4) {
       specials[1] = numberseyes[i] * (i + 1);
       console.log("Four of a kind");
     }
-    if (numberseyes[i] == 5){
-      specials[5] = 50
+    if (numberseyes[i] == 5) {
+      specials[5] = 50;
       console.log("Yahtzee");
     }
-    if (numberseyes[i] == 5 && score_used[1][playerturn-1][5]== true){
-      specials[7] = 100
+    if (numberseyes[i] == 5 && score_used[1][playerturn - 1][5] == true) {
+      specials[7] = 100;
       console.log("BONUS Yahtzee");
+    }
+    if (numberseyes[i] == 3) {
+      for (let j = 0; j < 6; j++) {
+        if (j != i) {
+          if (numberseyes[j] == 2) {
+            specials[2] = 25;
+            console.log("full house");
+          }
+        }
+      }
+    }
+    if (
+      i == 2 &&
+      ((numberseyes[i - 2] >= 1 &&
+        numberseyes[i - 1] >= 1 &&
+        numberseyes[i] >= 1 &&
+        numberseyes[i + 1] >= 1) ||
+        (numberseyes[i - 1] >= 1 &&
+          numberseyes[i] >= 1 &&
+          numberseyes[i + 1] >= 1 &&
+          numberseyes[i + 2] >= 1))
+    ) {
+      specials[3] = 30;
+      console.log("small straight");
+    }
+    if (i == 0 || i == 1) {
+      if (
+        numberseyes[i] >= 1 &&
+        numberseyes[i + 1] >= 1 &&
+        numberseyes[i + 2] >= 1 &&
+        numberseyes[i + 3] >= 1 &&
+        numberseyes[i + 4] >= 1
+      ) {
+        specials[4] = 40;
+        console.log("large straight");
+      }
     }
   }
 
@@ -231,15 +266,9 @@ function scoreboardupdate() {
     array[5].style = "text-decoration:line-through;";
     array[5].innerHTML = "Total 6's: " + score[0][playerturn - 1][5];
   }
-  if (score_used[0][playerturn - 1][6] == false) {
-    array[6].innerHTML = "Bonus(63+): ";
-  }
-  if (score_used[0][playerturn - 1][7] == false) {
-    array[7].innerHTML = "Total upper section: " + total_uppersection;
-  }
-  if (score_used[0][playerturn - 1][8] == false) {
-    array[8].innerHTML = "Total: " + total;
-  }
+  array[6].innerHTML = "Bonus(63+): " + score[0][playerturn - 1][6];
+  array[7].innerHTML = "Total upper section: " + score[0][playerturn - 1][7];
+  array[8].innerHTML = "Total: " + score[0][playerturn - 1][8];
   if (score_used[1][playerturn - 1][0] == false) {
     array2[0].style = "text-decoration:none;";
     array2[0].innerHTML = "Three of a kind: " + specials[0];
@@ -254,10 +283,54 @@ function scoreboardupdate() {
     array2[1].style = "text-decoration:line-through;";
     array2[1].innerHTML = "Four of a kind: " + score[1][playerturn - 1][1];
   }
-  if(score_used[1][playerturn - 1][2] == false){
+  if (score_used[1][playerturn - 1][2] == false) {
     array2[2].style = "text-decoration:none;";
     array2[2].innerHTML = "Full house: " + specials[2];
+  } else {
+    array2[2].style = "text-decoration:line-through;";
+    array2[2].innerHTML = "Full house: " + score[1][playerturn - 1][2];
   }
+  if (score_used[1][playerturn - 1][3] == false) {
+    array2[3].style = "text-decoration:none;";
+    array2[3].innerHTML = "Small straight: " + specials[3];
+  } else {
+    array2[3].style = "text-decoration:line-through;";
+    array2[3].innerHTML = "Small straight: " + score[1][playerturn - 1][3];
+  }
+  if (score_used[1][playerturn - 1][4] == false) {
+    array2[4].style = "text-decoration:none;";
+    array2[4].innerHTML = "Large straight: " + specials[4];
+  } else {
+    array2[4].style = "text-decoration:line-through;";
+    array2[4].innerHTML = "Large straight: " + score[1][playerturn - 1][4];
+  }
+  if (score_used[1][playerturn - 1][5] == false) {
+    array2[5].style = "text-decoration:none;";
+    array2[5].innerHTML = "Yahtzee: " + specials[5];
+  } else {
+    array2[5].style = "text-decoration:line-through;";
+    array2[5].innerHTML = "Yahtzee: " + score[1][playerturn - 1][5];
+  }
+  if (score_used[1][playerturn - 1][6] == false) {
+    array2[6].style = "text-decoration:none;";
+    array2[6].innerHTML = "Chance: " + specials[6];
+  } else {
+    array2[6].style = "text-decoration:line-through;";
+    array2[6].innerHTML = "Chance:" + score[1][playerturn - 1][6];
+  }
+  if (score_used[1][playerturn - 1][7] == false && turn_ended == false) {
+    array2[7].style = "text-decoration:none;";
+    array2[7].innerHTML = "Bonus Yahtzee: " + specials[7];
+  } else if (
+    score_used[1][playerturn - 1][7] == true &&
+    score_used[1][playerturn - 1][5] == true
+  ) {
+    array2[7].style = "text-decoration:line-through;";
+    array2[7].innerHTML = "Bonus Yahtzee: " + score[1][playerturn - 1][7];
+  }
+  array2[8].style = "text-decoration:none;";
+  array2[8].innerHTML = "Total Lower section: " + score[1][playerturn - 1][8];
+
   // todo add bonus ,total upper section ,total lower section ,total ,4 of a kind
   // full house, small straight, large straight, yahtzee, bonus yahtzee , chance
 }
@@ -290,12 +363,36 @@ function scoreboard(pressed) {
             console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 2) {
+            score[1][playerturn - 1][2] = specials[2];
+            score_used[1][playerturn - 1][2] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 3) {
+            score[1][playerturn - 1][3] = specials[3];
+            score_used[1][playerturn - 1][3] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 4) {
+            score[1][playerturn - 1][4] = specials[4];
+            score_used[1][playerturn - 1][4] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 5) {
+            score[1][playerturn - 1][5] = specials[5];
+            score_used[1][playerturn - 1][5] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
+          }
+          if (i == 6) {
+          }
+          if (i == 7) {
+            score[1][playerturn - 1][7] = specials[7];
+            score_used[1][playerturn - 1][7] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
         }
       }
