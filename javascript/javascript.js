@@ -256,7 +256,7 @@ function scoreboardupdate() {
   }
   if(score_used[1][playerturn - 1][2] == false){
     array2[2].style = "text-decoration:none;";
-    array2[2].innerHTML = "Four of a kind: " + specials[2];
+    array2[2].innerHTML = "Full house: " + specials[2];
   }
   // todo add bonus ,total upper section ,total lower section ,total ,4 of a kind
   // full house, small straight, large straight, yahtzee, bonus yahtzee , chance
