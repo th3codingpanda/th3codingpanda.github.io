@@ -26,7 +26,7 @@ score[0] = [];
 score[1] = [];
 score_used[0] = [];
 score_used[1] = [];
-let yahtzee_happend_this_turn = false;
+let alldicetogether = 0;
 
 let playerturn = 1;
 
@@ -142,6 +142,7 @@ function darklightmodestartup() {
   //remembers what last theme was and changes it to that
 }
 function scoreboardtally() {
+  alldicetogether = 0;
   for (let i = 0; i < 6; i++) {
     numberseyes[i] = 0;
   }
@@ -164,6 +165,7 @@ function scoreboardtally() {
     }
   }
   for (let i = 0; i < 6; i++) {
+    alldicetogether += numberseyes[i] * (i + 1);
     if (numberseyes[i] == 3) {
       specials[0] = numberseyes[i] * (i + 1);
       console.log("Three of a kind");
