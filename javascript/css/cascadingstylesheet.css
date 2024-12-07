@@ -70,3 +70,6 @@ input[type="checkbox"]:checked + label::after {
 .lower_scoreboard:hover {
   color: #d8860b;
 }
+p:hover {
+  cursor: pointer;
+}

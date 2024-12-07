@@ -27,7 +27,7 @@ score[1] = [];
 score_used[0] = [];
 score_used[1] = [];
 let alldicetogether = 0;
-
+let game_ended = false;
 let playerturn = 1;
 
 let turn_ended = false;
@@ -59,7 +59,7 @@ function keep_or_roll(dice_clicked) {
   //
 }
 function players() {
-  if (turn_ended == true) {
+  if (turn_ended == true || game_ended == true) {
     times_rolled = 0;
     if (playerturn == amountplayers) {
       playerturn = 1;
@@ -98,6 +98,7 @@ function update() {
     "Playerturn = " + playerturn;
   scoreboardtally();
   //Updates dice and if it can reroll or not
+  checkifend();
 }
 function selectplayersamount() {
   numberplayersselected = document.getElementById("inputtext1").value;
@@ -142,6 +143,20 @@ function darklightmodestartup() {
   //remembers what last theme was and changes it to that
 }
 function scoreboardtally() {
+  score[0][playerturn - 1][7] = 0;
+  score[1][playerturn - 1][8] = 0;
+  for (let i = 0; i < 6; i++) {
+    score[0][playerturn - 1][7] += score[0][playerturn - 1][i];
+  }
+  for (let i = 0; i < 7; i++) {
+    score[1][playerturn - 1][8] += score[1][playerturn - 1][i];
+  }
+  if (score[0][playerturn - 1][7] >= 63) {
+    score[0][playerturn - 1][6] = 35;
+    score[0][playerturn - 1][7] += score[0][playerturn - 1][6];
+  }
+  score[0][playerturn - 1][8] =
+    score[1][playerturn - 1][8] + score[0][playerturn - 1][7];
   alldicetogether = 0;
   for (let i = 0; i < 6; i++) {
     numberseyes[i] = 0;
@@ -229,6 +244,9 @@ function scoreboardupdate() {
   if (score_used[0][playerturn - 1][0] == false) {
     array[0].style = "text-decoration:none;";
     array[0].innerHTML = "Total 1's: " + numberseyes[0] * 1 + " ";
+  } else if (game_ended == true) {
+    array[0].style = "text-decoration:none;";
+    array[0].innerHTML = "Total 1's: " + score[0][playerturn - 1][0];
   } else {
     array[0].style = "text-decoration:line-through;";
     array[0].innerHTML = "Total 1's: " + score[0][playerturn - 1][0];
@@ -236,6 +254,9 @@ function scoreboardupdate() {
   if (score_used[0][playerturn - 1][1] == false) {
     array[1].style = "text-decoration:none;";
     array[1].innerHTML = "Total 2's: " + numberseyes[1] * 2 + " ";
+  } else if (game_ended == true) {
+    array[1].style = "text-decoration:none;";
+    array[1].innerHTML = "Total 2's: " + score[0][playerturn - 1][1];
   } else {
     array[1].style = "text-decoration:line-through;";
     array[1].innerHTML = "Total 2's: " + score[0][playerturn - 1][1];
@@ -243,6 +264,9 @@ function scoreboardupdate() {
   if (score_used[0][playerturn - 1][2] == false) {
     array[2].style = "text-decoration:none;";
     array[2].innerHTML = "Total 3's: " + numberseyes[2] * 3 + " ";
+  } else if (game_ended == true) {
+    array[2].style = "text-decoration:none;";
+    array[2].innerHTML = "Total 3's: " + score[0][playerturn - 1][2];
   } else {
     array[2].style = "text-decoration:line-through;";
     array[2].innerHTML = "Total 3's: " + score[0][playerturn - 1][2];
@@ -250,6 +274,9 @@ function scoreboardupdate() {
   if (score_used[0][playerturn - 1][3] == false) {
     array[3].style = "text-decoration:none;";
     array[3].innerHTML = "Total 4's: " + numberseyes[3] * 4 + " ";
+  } else if (game_ended == true) {
+    array[3].style = "text-decoration:none;";
+    array[3].innerHTML = "Total 4's: " + score[0][playerturn - 1][3];
   } else {
     array[3].style = "text-decoration:line-through;";
     array[3].innerHTML = "Total 4's: " + score[0][playerturn - 1][3];
@@ -257,6 +284,9 @@ function scoreboardupdate() {
   if (score_used[0][playerturn - 1][4] == false) {
     array[4].style = "text-decoration:none;";
     array[4].innerHTML = "Total 5's: " + numberseyes[4] * 5 + " ";
+  } else if (game_ended == true) {
+    array[4].style = "text-decoration:none;";
+    array[4].innerHTML = "Total 5's: " + score[0][playerturn - 1][4];
   } else {
     array[4].style = "text-decoration:line-through;";
     array[4].innerHTML = "Total 5's: " + score[0][playerturn - 1][4];
@@ -264,6 +294,9 @@ function scoreboardupdate() {
   if (score_used[0][playerturn - 1][5] == false) {
     array[5].style = "text-decoration:none;";
     array[5].innerHTML = "Total 6's: " + numberseyes[5] * 6 + " ";
+  } else if (game_ended == true) {
+    array[5].style = "text-decoration:none;";
+    array[5].innerHTML = "Total 6's: " + score[0][playerturn - 1][5];
   } else {
     array[5].style = "text-decoration:line-through;";
     array[5].innerHTML = "Total 6's: " + score[0][playerturn - 1][5];
@@ -274,6 +307,9 @@ function scoreboardupdate() {
   if (score_used[1][playerturn - 1][0] == false) {
     array2[0].style = "text-decoration:none;";
     array2[0].innerHTML = "Three of a kind: " + specials[0];
+  } else if (game_ended == true) {
+    array2[0].style = "text-decoration:none;";
+    array2[0].innerHTML = "Three of a kind: " + score[1][playerturn - 1][0];
   } else {
     array2[0].style = "text-decoration:line-through;";
     array2[0].innerHTML = "Three of a kind: " + score[1][playerturn - 1][0];
@@ -281,6 +317,9 @@ function scoreboardupdate() {
   if (score_used[1][playerturn - 1][1] == false) {
     array2[1].style = "text-decoration:none;";
     array2[1].innerHTML = "Four of a kind: " + specials[1];
+  } else if (game_ended == true) {
+    array2[1].style = "text-decoration:none;";
+    array2[1].innerHTML = "Four of a kind: " + score[1][playerturn - 1][1];
   } else {
     array2[1].style = "text-decoration:line-through;";
     array2[1].innerHTML = "Four of a kind: " + score[1][playerturn - 1][1];
@@ -288,6 +327,9 @@ function scoreboardupdate() {
   if (score_used[1][playerturn - 1][2] == false) {
     array2[2].style = "text-decoration:none;";
     array2[2].innerHTML = "Full house: " + specials[2];
+  } else if (game_ended == true) {
+    array2[2].style = "text-decoration:none;";
+    array2[2].innerHTML = "Full house: " + score[1][playerturn - 1][2];
   } else {
     array2[2].style = "text-decoration:line-through;";
     array2[2].innerHTML = "Full house: " + score[1][playerturn - 1][2];
@@ -295,6 +337,9 @@ function scoreboardupdate() {
   if (score_used[1][playerturn - 1][3] == false) {
     array2[3].style = "text-decoration:none;";
     array2[3].innerHTML = "Small straight: " + specials[3];
+  } else if (game_ended == true) {
+    array2[3].style = "text-decoration:none;";
+    array2[3].innerHTML = "Small straight: " + score[1][playerturn - 1][3];
   } else {
     array2[3].style = "text-decoration:line-through;";
     array2[3].innerHTML = "Small straight: " + score[1][playerturn - 1][3];
@@ -302,6 +347,9 @@ function scoreboardupdate() {
   if (score_used[1][playerturn - 1][4] == false) {
     array2[4].style = "text-decoration:none;";
     array2[4].innerHTML = "Large straight: " + specials[4];
+  } else if (game_ended == true) {
+    array2[4].style = "text-decoration:none;";
+    array2[4].innerHTML = "Large straight: " + score[1][playerturn - 1][4];
   } else {
     array2[4].style = "text-decoration:line-through;";
     array2[4].innerHTML = "Large straight: " + score[1][playerturn - 1][4];
@@ -309,13 +357,19 @@ function scoreboardupdate() {
   if (score_used[1][playerturn - 1][5] == false) {
     array2[5].style = "text-decoration:none;";
     array2[5].innerHTML = "Yahtzee: " + specials[5];
+  } else if (game_ended == true) {
+    array2[5].style = "text-decoration:none;";
+    array2[5].innerHTML = "Yahtzee: " + score[1][playerturn - 1][5];
   } else {
     array2[5].style = "text-decoration:line-through;";
     array2[5].innerHTML = "Yahtzee: " + score[1][playerturn - 1][5];
   }
   if (score_used[1][playerturn - 1][6] == false) {
     array2[6].style = "text-decoration:none;";
-    array2[6].innerHTML = "Chance: " + specials[6];
+    array2[6].innerHTML = "Chance: " + alldicetogether;
+  } else if (game_ended == true) {
+    array2[6].style = "none;";
+    array2[6].innerHTML = "Chance:" + score[1][playerturn - 1][6];
   } else {
     array2[6].style = "text-decoration:line-through;";
     array2[6].innerHTML = "Chance:" + score[1][playerturn - 1][6];
@@ -323,6 +377,13 @@ function scoreboardupdate() {
   if (score_used[1][playerturn - 1][7] == false && turn_ended == false) {
     array2[7].style = "text-decoration:none;";
     array2[7].innerHTML = "Bonus Yahtzee: " + specials[7];
+  } else if (
+    score_used[1][playerturn - 1][7] == true &&
+    score_used[1][playerturn - 1][5] == true &&
+    game_ended == true
+  ) {
+    array2[7].style = "text-decoration:none";
+    array2[7].innerHTML = "Bonus Yahtzee: " + score[1][playerturn - 1][7];
   } else if (
     score_used[1][playerturn - 1][7] == true &&
     score_used[1][playerturn - 1][5] == true
@@ -389,6 +450,10 @@ function scoreboard(pressed) {
             console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 6) {
+            score[1][playerturn - 1][6] = alldicetogether;
+            score_used[1][playerturn - 1][6] = true;
+            activated = true;
+            console.log(i + 1 + " " + score[1][playerturn - 1]);
           }
           if (i == 7) {
             score[1][playerturn - 1][7] = specials[7];
@@ -444,5 +509,20 @@ function initiate() {
     console.log(i + 1 + " " + score[1][i]);
     console.log(i + 1 + " " + score_used[0][i]);
     console.log(i + 1 + " " + score_used[1][i]);
+  }
+}
+function checkifend() {
+  let amountoftrue1 = 0;
+  let amountoftrue2 = 0;
+  for (let i = 0; i < 9; i++) {
+    if (score_used[0][amountplayers - 1][i] == true) {
+      amountoftrue1++;
+    }
+    if (score_used[1][amountplayers - 1][i] == true) {
+      amountoftrue2++;
+    }
+  }
+  if (amountoftrue1 == 6 && amountoftrue2 == 8) {
+    game_ended = true;
   }
 }
