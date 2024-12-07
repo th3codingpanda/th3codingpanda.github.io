@@ -138,7 +138,9 @@ function darklightmodestartup() {
   } else {
     document.getElementById("body").className = "lightmode";
     console.log("Darkmode = false");
-    document.getElementById("dark-lightmode").checked = false;
+    if (typeof index !== "undefined") {
+      document.getElementById("dark-lightmode").checked = true;
+    }
   }
   //remembers what last theme was and changes it to that
 }
@@ -369,10 +371,10 @@ function scoreboardupdate() {
     array2[6].innerHTML = "Chance: " + alldicetogether;
   } else if (game_ended == true) {
     array2[6].style = "none;";
-    array2[6].innerHTML = "Chance:" + score[1][playerturn - 1][6];
+    array2[6].innerHTML = "Chance: " + score[1][playerturn - 1][6];
   } else {
     array2[6].style = "text-decoration:line-through;";
-    array2[6].innerHTML = "Chance:" + score[1][playerturn - 1][6];
+    array2[6].innerHTML = "Chance: " + score[1][playerturn - 1][6];
   }
   if (score_used[1][playerturn - 1][7] == false && turn_ended == false) {
     array2[7].style = "text-decoration:none;";
@@ -465,6 +467,7 @@ function scoreboard(pressed) {
       }
     }
   }
+  // todo make this a for loop
   if (activated) {
     turn_ended = true;
     times_rolled = 3;
