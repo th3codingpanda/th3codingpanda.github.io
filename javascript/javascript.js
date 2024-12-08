@@ -139,7 +139,7 @@ function darklightmodestartup() {
     document.getElementById("body").className = "lightmode";
     console.log("Darkmode = false");
     if (typeof index !== "undefined") {
-      document.getElementById("dark-lightmode").checked = true;
+      document.getElementById("dark-lightmode").checked = false;
     }
   }
   //remembers what last theme was and changes it to that
