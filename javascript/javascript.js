@@ -183,11 +183,11 @@ function scoreboardtally() {
   }
   for (let i = 0; i < 6; i++) {
     alldicetogether += numberseyes[i] * (i + 1);
-    if (numberseyes[i] == 3) {
+    if (numberseyes[i] >= 3) {
       specials[0] = numberseyes[i] * (i + 1);
       console.log("Three of a kind");
     }
-    if (numberseyes[i] == 4) {
+    if (numberseyes[i] >= 4) {
       specials[1] = numberseyes[i] * (i + 1);
       console.log("Four of a kind");
     }
