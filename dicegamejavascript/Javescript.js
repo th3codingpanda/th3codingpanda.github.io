@@ -45,4 +45,3 @@ function Score() {
     alert("you lost by " + (dice[2] + dice[3] - (dice[0] + dice[1])));
   }
 }
-w
