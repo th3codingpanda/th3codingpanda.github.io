@@ -1,0 +1,81 @@
+:root {
+    --HeaderHeigth: 50px;
+    --Header: 90px;
+  }
+body{
+    margin: 0px;
+}
+
+.BackgroundSB{
+    background-color: #7B8FA1;
+    height: var(--HeaderHeigth)
+}
+.BackgroundLG{
+ background-color: lightgray;
+ padding: 1%
+}
+.BackgroundMG{
+    background-color:#9f9f9f;
+}
+.BackgroundDG{
+   background-color: #9BB1A1;
+}
+.BackgroundImage{
+    background-image: url("../Images/CodingGif.gif");
+    padding: 300px;
+}
+.NoMargin{
+    margin: 0px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--Header)
+}
+.sticky{
+    position: sticky;
+    padding: 10px;
+    top: 0px;
+    
+}
+  .Grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+  }
+  .WhiteText{
+    color: white;
+  }
+  .TextCenter{
+    text-align: center;
+  }
+  .Padding5{
+    padding: 5px;
+  }
+  .Padding20{
+    padding: 20px;
+  }
+  .Padding20Left{
+    padding-left: 20px;
+  }
+  .PaddingBottom{
+    padding-bottom: 70px;
+  }
+  .Flex{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.Flex a {
+    background-color: #000000;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .textOverFlow{
+    overflow-wrap:anywhere;
+    padding-right: 20px;
+  }

@@ -1,95 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Projects</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        user-select: none;
-      }
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: #1a1d24;
-        height: 100vh;
-      }
-      #container {
-        display: grid;
-        grid-template-columns: 57px 57;
-        row-gap: 20px;
-        max-width: 180px;
-      }
-      a {
-        display: inline-block;
-        padding: 10px 8px;
-        background-color: #4ca68a;
-        text-decoration: none;
-        color: white;
-        border-radius: 6px;
-        text-transform: uppercase;
-        transition: background-color 0.3s, color 0.3s, transform 0.3s,
-          box-shadow 0.3s ease;
-        width: 100%;
-        text-align: center;
-      }
-      a:hover {
-        transform: translateY(-5px);
-        box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.5);
-        background-color: #65b198;
-        animation: glint 0.4s linear;
-      }
-      a:active {
-        transform: translateY(0);
-        background-color: #2d9b7c;
-        box-shadow: none;
-      }
-      @keyframes glint {
-        20% {
-          background-image: linear-gradient(
-            to bottom right,
-            #7cbca6,
-            #65b198,
-            #65b198,
-            #65b198
-          );
-        }
-        40% {
-          background-image: linear-gradient(
-            to bottom right,
-            #65b198,
-            #7cbca6,
-            #65b198,
-            #65b198
-          );
-        }
-        60% {
-          background-image: linear-gradient(
-            to bottom right,
-            #65b198,
-            #65b198,
-            #7cbca6,
-            #65b198
-          );
-        }
-        80% {
-          background-image: linear-gradient(
-            to bottom right,
-            #65b198,
-            #65b198,
-            #65b198,
-            #7cbca6
-          );
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container">
-      <h1><a href="javascript/index.html">Yahtzee</a></h1>
-      <h1><a href="dicegamejavascript/Dicegame.html">Dice game</a></h1>
+<html lang="english">
+    <head>
+        <link rel="stylesheet" href="Css/CascadingStylesheet.css">
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RafWoudCVPagina</title>
+        <link rel="icon" type="Image/png" href="Images/Favicon.png">
+        <script src="Javascript.js"></script>
+    </head>
+<body>
+  <header class="sticky BackgroundSB Flex">
+    <a class="WhiteText" href="#Home">Home </a>
+    <a class="WhiteText" href="#About-Me">About Me </a>
+    <a class="WhiteText" href="#Portofolio">Portofolio </a>
+    <a class="WhiteText" href="Cv.pdf" download>CV Download </a>
+    <a class="WhiteText" href="#Contact">Contact </a>
+  </header>
+<div id="Home" class="BackgroundImage">
+  <h1 class="WhiteText TextCenter">Raf Woud</h1>
+  <h3 class="WhiteText TextCenter">I am a GameDeveloper</h3>
+  <!--add 1 Good skill that i have here-->
+</div>
+<div id="About-Me">
+  <h1 class="BackgroundSB Padding20 TextCenter NoMargin">About Me</h1>
+  <p>Skills</p>
+</div>
+<div id="Portofolio" class=" BackgroundMG">
+  <h1 class="BackgroundSB Padding20 TextCenter NoMargin">Portofolio</h1>
+  <h1 class="BackgroundSB Padding20 TextCenter NoMargin">Yahtzee</h1>
+    <div class="Grid">
+    <div>
+      <img src="Images/YahtzeeGif.gif" alt="YahtzeeGif "  width="400">
     </div>
-  </body>
+    <div>
+      <p class="textOverFlow">BLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAA</p>
+    </div>
+</div>
+<h1 class="BackgroundSB Padding20 TextCenter NoMargin">TowerDefence3D</h1>
+<div class="Grid">
+  <div>
+    <img src="Images/TowerDefenceGif.gif" alt="TowerDefenceGif "  width="400">
+  </div>
+  <div>
+    <h1>TowerDefence</h1>
+    <p class="textOverFlow">BLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAA</p>
+  </div>
+</div>
+<h1 class="BackgroundSB Padding20 TextCenter NoMargin">Portofolio</h1>
+<div class="Grid">
+  <div>
+    <img src="Images/YahtzeeGif.gif" alt="YahtzeeGif "  width="400">
+  </div>
+  <div>
+    <h1>Yahtzee</h1>
+    <p class="textOverFlow">BLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAA</p>
+  </div>
+</div>
+<h1 class="BackgroundSB Padding20 TextCenter NoMargin">Portofolio</h1>
+<div class="Grid">
+  <div>
+    <img src="Images/YahtzeeGif.gif" alt="YahtzeeGif "  width="400">
+  </div>
+  <div>
+    <h1>Yahtzee</h1>
+    <p class="textOverFlow">BLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAA</p>
+  </div>
+</div>
+<h1 class="BackgroundSB Padding20 TextCenter NoMargin">Portofolio</h1>
+<div class="Grid">
+  <div>
+    <img src="Images/YahtzeeGif.gif" alt="YahtzeeGif "  width="400">
+  </div>
+  <div>
+    <h1>Yahtzee</h1>
+    <p class="textOverFlow">BLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAABLAGAHGAWHGAHWGUHAGHWAIHTIAAAAAAAAAAAAAAAAAAAAA</p>
+  </div>
+</div>
+</div>
+<div class="BackgroundSB PaddingBottom">
+ <footer id="Contact">
+    <h1 class="TextCenter NoMargin">Contact</h1>
+    <a href="https://github.com/th3codingpanda" class="Padding20Left"><img src="Images/GithubIcon.png" alt="GitHubIcon" width="20" height="20"></a>
+    <a href="https://www.linkedin.com/in/raf-woud-49686533b/" class="Padding5"><img src="Images/LinkedInIcon.png" alt="LinkedInIcon" width="20" height="20"></a>
+    <a href="+31 614100810" onclick="copyURI(event)" class="Padding5" c><img src="Images/PhoneIcon.png" alt="Phone Icon" width="20" height="20">+31 614100810</a>
+    <a href="RafWoud@pm.me" onclick="copyURI(event)" class="Padding5"><img src="Images/MailIcon.png" alt="Email Icon" width="20" height="20"> Rafwoud@pm.me</a>
+    <img  src="Images/MapIcon.png" alt="Map Icon" width="20" height="20" class="Padding5"> Lelystad
+ </footer>
+</div>
+</body>
 </html>
