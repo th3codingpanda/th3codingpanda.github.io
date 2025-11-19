@@ -1,2 +1,2 @@
 # th3codingpanda.github.io
-MyGithubWebsite
+Moved to a new repository 
