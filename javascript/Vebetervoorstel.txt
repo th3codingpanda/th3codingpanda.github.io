@@ -1,0 +1,3 @@
+minder lange code voor scoreboardupdate
+en zet scoreboard in een voor loop
+beter leesbare code

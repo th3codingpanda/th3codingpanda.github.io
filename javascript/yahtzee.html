@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/cascadingstylesheet.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yahtzee</title>
+    <script src="javascript.js"></script>
+  </head>
+  <body id="body" class="lightmode">
+    <h1 id="playerturn">Playerturn = 1</h1>
+    <h1 id="turnsleft">Turns left: 3</h1>
+    <button type="button" onclick="roll()">dice</button>
+    <button type="button" onclick="players()">next player</button><br />
+    <button type="button" id="button1" class="not_pressed">
+      <img
+        id="dice1"
+        onclick="keep_or_roll(this.id)"
+        src="images/eyeless.png"
+        alt="goku"
+      />
+    </button>
+    <button type="button" id="button2" class="not_pressed">
+      <img
+        id="dice2"
+        onclick="keep_or_roll(this.id)"
+        src="images/eyeless.png"
+        alt="goku"
+      />
+    </button>
+    <button type="button" id="button3" class="not_pressed">
+      <img
+        id="dice3"
+        onclick="keep_or_roll(this.id)"
+        src="images/eyeless.png"
+        alt="goku"
+      />
+    </button>
+    <button type="button" id="button4" class="not_pressed">
+      <img
+        id="dice4"
+        onclick="keep_or_roll(this.id)"
+        src="images/eyeless.png"
+        alt="goku"
+      />
+    </button>
+    <button type="button" id="button5" class="not_pressed">
+      <img
+        id="dice5"
+        onclick="keep_or_roll(this.id)"
+        src="images/eyeless.png"
+        alt="goku"
+      />
+    </button>
+    <div class="scoreboard">
+      <div class="scoreboardleft">
+        <p
+          class="upper_scoreboard"
+          onclick="scoreboard(this.className +': '+ 1)"
+        >
+          Total 1's:
+        </p>
+        <p
+          class="upper_scoreboard"
+          onclick="scoreboard(this.className +': '+ 2)"
+        >
+          Total 2's:
+        </p>
+        <p
+          class="upper_scoreboard"
+          onclick="scoreboard(this.className +': '+ 3)"
+        >
+          Total 3's:
+        </p>
+        <p
+          class="upper_scoreboard"
+          onclick="scoreboard(this.className +': '+ 4)"
+        >
+          Total 4's:
+        </p>
+        <p
+          class="upper_scoreboard"
+          onclick="scoreboard(this.className +': '+ 5)"
+        >
+          Total 5's:
+        </p>
+        <p
+          class="upper_scoreboard"
+          onclick="scoreboard(this.className +': '+ 6)"
+        >
+          Total 6's:
+        </p>
+        <p class="upper_scoreboard">Bonus(if 63+):</p>
+        <p class="upper_scoreboard">Total upper section:</p>
+        <p class="upper_scoreboard">Total:</p>
+      </div>
+      <div class="scoreboardright">
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 1)"
+        >
+          Three of a kind:
+        </p>
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 2)"
+        >
+          Four of a kind:
+        </p>
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 3)"
+        >
+          Full house:
+        </p>
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 4)"
+        >
+          Small straight:
+        </p>
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 5)"
+        >
+          Large straight:
+        </p>
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 6)"
+        >
+          Yahtzee:
+        </p>
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 7)"
+        >
+          Chance:
+        </p>
+        <p
+          class="lower_scoreboard"
+          onclick="scoreboard(this.className +': '+ 8)"
+        >
+          Bonus Yahtzee:
+        </p>
+        <p class="lower_scoreboard">Total Lower section:</p>
+      </div>
+    </div>
+    <script>
+      darklightmodestartup();
+      initiate();
+      scoreboardupdate();
+    </script>
+  </body>
+</html>

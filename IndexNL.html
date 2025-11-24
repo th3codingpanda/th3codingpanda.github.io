@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="Nederlands">
+    <head>
+        <link rel="stylesheet" href="Css/CascadingStylesheet.css">
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RafWoudPortfolioPagina</title>
+        <link rel="icon" type="Image/png" href="Images/Favicon.png">
+        <script defer src="Javascript.js"></script>
+    </head>
+<body>
+  <header class="sticky BackgroundSB Flex ">
+    <a class="WhiteText HeaderButtonOne" href="#Home">Home </a>
+    <a class="WhiteText HeaderButtonOne" href="#About-Me">Over mij </a>
+    <a class="WhiteText HeaderButtonOne" href="#Portofolio">Portfolio </a>
+    <a class="WhiteText HeaderButtonOne" href="#Contact">Contact </a>
+    <a class="HeaderButtonTwo" href="index.html"><img src="Images/Flag_of_the_United_Kingdom_(3-5).png" alt="English" width="50" height="30"></a>
+    <a class="HeaderButtonTwo" href="indexNL.html"><img src="Images/Flag_of_the_Netherlands.png" width="50" height="30" alt="Dutch"></a>
+  </header>
+ <!--- Edit text to reflect what i did in team project and change colors up a bit and remove teh button look from the header-->
+<div id="Home" class="BackgroundImage">
+<section class="Hidden">
+  <h1 class="WhiteText TextCenter">Raf Woud</h1>
+  <h3 class="WhiteText TextCenter">Ik ben een Software Developer</h3>
+</section>
+</div>
+
+<div id="About-Me" class="BackgroundSB Padding50 Flex">
+    <section class="Hidden"><h1 class="NoMargin ">Over mij</h1></section>
+</div>
+<div id="About-Me-Info" class="BackgroundMG Padding20 NoMargin">
+    <section class="Hidden">
+  <h3>Mijn naam is Raf Woud, ik ben 19 jaar jong. Ik volg de opleiding software/game development op het Roc van Flevoland. Ik heb een passie voor dingen creëren en ik vind het heel interessant om te leren hoe programma’s op de achtergrond werken.
+    <br><br>
+  Ik ben het best in backend programmeren en vind het daarom belangrijk dat mijn code zo leesbaar mogelijk is. Ik maak die dingen graag zo complex mogelijk, maar wel zo dat het altijd op tijd af is.
+  Mensen zeggen dat ik daarin vastberaden, leergierig en sociaal ben.
+  <br><br>
+  Ik zou graag nog meer codeertalen willen leren om zoveel mogelijk codeerinformatie op te bouwen. Tijdens mijn stage hoop ik door nog meer best practices mijn teamwerk te kunnen vergroten. In de toekomst wil ik graag met anderen mensen mijn passie voor coderen delen.
+  </h3>
+    <div class="button-container BackgroundMG NoMargin">
+      <a class="my-button" href="RafWoudCv.pdf" download>CV Download </a>
+    </div>
+</section>
+</div>
+
+<div id="Portofolio" class=" BackgroundMG ">
+    <section class="Hidden">
+  <h1 class="BackgroundSB TextCenter NoMargin">Portfolio</h1>
+</section>
+</div>
+
+<div class="BackgroundMG NoMargin Padding20 ">
+    <section class="Hidden">
+        <div class="CardContainer">
+    <div class="Card">
+        <img class="NoPaddingBottom" src="Images/YahtzeeGif.gif" alt="YahtzeeGif">
+        <img  src="Images/YahtzeePlayerAmount.png" alt="ChoosePlayerAmount">
+        <div class="CardContent">
+            <h1>Yahtzee</h1>
+            <p>Dit was mijn eerste JavaScript-project, en ik besloot er alles uit te halen door mijn Yahtzee-spel zoveel mogelijk spelers te laten ondersteunen. Ik koos ervoor arrays te gebruiken om de scores van de spelers op te slaan, wat me hielp te begrijpen hoe arrays werken. Het stelde me ook in staat om rationeler na te denken over hoe ik het project dat ik in mijn hoofd had moest plannen.</p>
+            <h3>Codeertaal:</h3>
+            <p>Html&amp;Css + javascript</p>
+            <div class="button-container">
+                <a href="javascript/index.html" target="_blank" class="my-button">Speel spel</a>
+                <a href="" target="_blank" class="my-button">Github Link</a></div>
+            </div>
+    </div>
+    <div class="Card">
+        <img src="Images/2DGame.gif" alt="2DGameGif">
+        <div class="CardContent">
+            <h1>2DGame</h1>
+            <p>Voor mijn eerste Unity-project, een 2D-platformer, heb ik gekozen voor een Celeste-achtige stijl, met een camera die vastligt op een kamer totdat je naar een andere gaat. Daarnaast heb ik ook de dash toegevoegd en zelf een functie gemaakt waarmee je de zwaartekracht kunt omkeren. Het was heel leerzaam om voor het eerst in Unity te werken, en ik heb daar ook veel van geleerd.</p>
+            <h3>Codeertaal:</h3>
+            <p>C# Console app</p>
+            <div class="button-container">
+                <a href="https://github.com/th3codingpanda/Unity-2D-Game" target="_blank" class="my-button">Github Link</a>
+            </div>
+        </div>
+    </div>
+    <div class="Card">
+        <img src="Images/AdminProgramUserGif.gif" alt="UserLoginGif">
+        <img src="Images/AdminProgramAdminGif.gif" alt="AdminLoginGif">
+        <div class="CardContent">
+            <h1>Admin Program</h1>
+            <p class="">Dit was een van mijn favoriete projecten om aan te werken. Mijn docent daagde me uit om mijn admin-project zo te maken dat bestanden veilig worden opgeslagen in een JSON-bestand met encryptie. Om dit te bereiken, gebruikte ik SHA-256 om het wachtwoord te versleutelen bij het aanmaken van een account, waarbij het versleutelde wachtwoord in het JSON-bestand wordt opgeslagen. Bij het inloggen wordt het ingevoerde wachtwoord omgezet naar SHA-256 en vergeleken met het wachtwoord in het JSON-bestand.<br><br>Ik heb de mogelijkheid toegevoegd voor gebruikers om hun eigen wachtwoord te wijzigen, en gebruikers kunnen ook hun eigen account verwijderen, wat het JSON-bestand verwijdert. Admins hebben daarentegen de mogelijkheid om zowel het wachtwoord als de admin-status van andere gebruikers te wijzigen, evenals het verwijderen van accounts van andere gebruikers. Al met al was het een geweldige ervaring om deze nieuwe concepten te leren en toe te passen.</p>
+                <h3>Codeertaal:</h3>
+                <p>C# Console app</p>
+            <div class="button-container"><a href="https://github.com/th3codingpanda/Admin-program " target="_blank" class="my-button">Github Link</a></div>
+        </div>
+    </div>
+    </div>
+    </section>
+</div>
+    <div class="BackgroundMG Padding50Bottom ">
+        <section class="Hidden2">
+            <div class="CardContainer" >
+    <div class="Card">
+        <img src="Images/DiceGameGif.gif" alt="DicegameGif">
+        <div class="CardContent">
+            <h1>DiceGame</h1>
+            <p>De Dice Game was een leuke race tussen mij en wat vrienden om een JavaScript-dicegame zo snel mogelijk te maken. Hiervoor heb ik veel van mijn Yahtzee-code kunnen gebruiken en heb het toen het snelst afgemaakt en met de hoogste score.</p>
+            <h3>Codeertaal:</h3>
+            <p>Html&amp;Css + javascript</p>
+            <div class="button-container">
+                <a href="dicegamejavascript/Dicegame.html" target="_blank" class="my-button">Speel Spel</a>
+                <a href="GameInfo/DiceGameNL.html" target="_blank" class="my-button">Github Link</a>
+            </div>
+        </div>
+    </div>
+    <div class="Card">
+        <img src="Images/TowerDefenceGif.gif" alt="TowerDefenceGif">
+        <div class="CardContent">
+            <h1>3D TowerDefence</h1>
+            <p class="">Dit was een teamproject met twee personen. We besloten dat we een aanpasbare Tower Defense-layout voor ons spel wilden maken. Ik heb persoonlijk gewerkt aan het padvindingsscript voor de vijanden. Aangezien de indeling veranderbaar is, besloot ik A* (A-star Pathfinding) te gebruiken. Dit algoritme wijst een kostenwaarde toe aan elke cel en zoekt vervolgens de goedkoopste route naar het eindpunt. Ik heb ook gewerkt aan de scripts voor beweging, torenplaatsing en muurplaatsing, samen met de kostenbehandelaar voor deze functies.</p>
+            <h3>Codeertaal &amp; Engine</h3>
+            <p>C# in Unity</p>
+            <div class="button-container"><a href="https://github.com/th3codingpanda/Boips-Tower-Defence" target="_blank" class="my-button">Github Link</a></div>
+        </div>
+    </div>
+
+
+</div>
+</section>
+</div>
+
+
+ <footer class="BackgroundSB Footer" id="Contact">
+    <section class="Hidden2">
+    <h1 class="TextCenter NoMargin">Contact</h1>
+    <h3 class="TextCenter NoMargin">Als je nog vragen hebt contact mij dan op:</h3>
+    <div class="Flex">
+    <a href="https://github.com/th3codingpanda" class="Padding5"><img src="Images/GithubIcon.png" class="GrayImage" alt="GitHubIcon" width="20" height="20"></a>
+    <a href="https://www.linkedin.com/in/raf-woud-49686533b/" class="Padding5"><img src="Images/LinkedInIcon.png" class="GrayImage" alt="LinkedInIcon" width="20" height="20"></a>
+    <a href="callto:+31 614100810" class="Padding5 FooterText"><img src="Images/PhoneIcon.png" class="GrayImage" alt="Phone Icon" width="20" height="20">+31 614100810</a>
+    <a href="mailto:RafWoud@pm.me" class="Padding5 FooterText"><img src="Images/MailIcon.png" alt="Email Icon" class="GrayImage" width="20" height="20"> Rafwoud@pm.me</a>
+</div>
+</section>
+ </footer>
+
+</body>
+</html>

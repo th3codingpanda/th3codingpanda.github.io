@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/cascadingstylesheet.css" >
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <script>
+      const index = true;
+    </script>
+    <script src="javascript.js"></script>
+  </head>
+  <body id="body" class="lightmode">
+    <input type="checkbox" id="dark-lightmode" onclick="darklightmode()" >
+    <label for="dark-lightmode"></label>
+    <h1>Choose player amount</h1>
+    <div style="text-align: center">
+      <input type="text" id="inputtext1" >
+      <button type="submit" onclick="selectplayersamount()">Sumbit</button>
+    </div>
+    <h1>This website is intended to be viewed in darkmode</h1>
+    <script>
+      darklightmodestartup();
+    </script>
+  </body>
+</html>

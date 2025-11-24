@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="English">
+    <head>
+        <link rel="stylesheet" href="Css/CascadingStylesheet.css">
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RafWoudPortfolioPage</title>
+        <link rel="icon" type="Image/png" href="Images/Favicon.png">
+        <script defer src="Javascript.js"></script>
+    </head>
+<body>
+  <header class="sticky BackgroundSB Flex ">
+    <a class="WhiteText HeaderButtonOne" href="#Home">Home </a>
+    <a class="WhiteText HeaderButtonOne" href="#About-Me">About me</a>
+    <a class="WhiteText HeaderButtonOne" href="#Portofolio">Portfolio </a>
+    <a class="WhiteText HeaderButtonOne" href="#Contact">Contact </a>
+    <a class="HeaderButtonTwo" href="index.html"><img src="Images/Flag_of_the_United_Kingdom_(3-5).png" alt="English" width="50" height="30"></a>
+    <a class="HeaderButtonTwo" href="indexNL.html"><img src="Images/Flag_of_the_Netherlands.png" width="50" height="30" alt="Dutch"></a>
+  </header>
+
+<div id="Home" class="BackgroundImage">
+<section class="Hidden">
+  <h1 class="WhiteText TextCenter">Raf Woud</h1>
+  <h3 class="WhiteText TextCenter">I'm a Software Developer</h3>
+</section>
+</div>
+
+<div id="About-Me" class="BackgroundSB Padding50 Flex">
+    <section class="Hidden"><h1 class="NoMargin ">About Me</h1></section>
+</div>
+<div id="About-Me-Info" class="BackgroundMG Padding20 NoMargin">
+    <section class="Hidden">
+      <h3>
+        My name is Raf Woud, and I'm 19 years old. I'm studying software/game development at the ROC van Flevoland. I have a passion for creating things and find it very interesting to learn how programs work in the background.
+    <br><br>
+    I excel at back-end programming, so I find it important that my code is as readable as possible. I like to make things as complex as possible, but always on time.
+    People say I'm determined, eager to learn, and sociable in this regard.
+    <br><br>
+    I'd like to learn more coding languages ​​to build as much coding knowledge as possible. During my internship, I hope to improve my teamwork by learning more best practices. In the future, I'd like to share my passion for coding with others.
+  </h3>
+    <div class="button-container BackgroundMG NoMargin">
+      <a class="my-button" href="RafWoudCv.pdf" download>CV Download </a>
+    </div>
+</section>
+</div>
+
+<div id="Portofolio" class=" BackgroundMG ">
+    <section class="Hidden">
+  <h1 class="BackgroundSB TextCenter NoMargin">Portfolio</h1>
+</section>
+</div>
+
+<div class="BackgroundMG NoMargin Padding20 ">
+    <section class="Hidden">
+        <div class="CardContainer">
+    <div class="Card">
+        <img class="NoPaddingBottom" src="Images/YahtzeeGif.gif" alt="YahtzeeGif">
+        <img  src="Images/YahtzeePlayerAmount.png" alt="ChoosePlayerAmount">
+        <div class="CardContent">
+            <h1>Yahtzee</h1>
+            <p>This was my first JavaScript project, and I decided to go all out by making our Yahtzee game support as many players as possible. I chose to use arrays to store the players' scores, which helped me learn how arrays work. It also allowed me to think more rationally about how to plan out the project I had in mind. </p>                <h3>CodingLanguage:</h3>
+            <p>Html&amp;Css + javascript</p>
+            <div class="button-container">
+                <a href="javascript/index.html" target="_blank" class="my-button">Play game</a>
+                <a href="" target="_blank" class="my-button">Github Link</a></div>
+            </div>
+    </div>
+    <div class="Card">
+        <img src="Images/2DGame.gif" alt="2DGameGif">
+        <div class="CardContent">
+            <h1>2DGame</h1>
+            <p>For my first Unity project, a 2D platformer, I chose a Celeste-like style, with a camera that is locked to a room until you move to another one. Additionally, I added a dash mechanic and created a function that allows you to reverse gravity. It was very educational to work in Unity for the first time, and I learned a lot from it.</p>
+            <h3>CodingLanguage:</h3>
+            <p>C# Console app</p>
+            <div class="button-container">
+                <a href="https://github.com/th3codingpanda/Unity-2D-Game" target="_blank" class="my-button">Github Link</a>
+            </div>
+        </div>
+    </div>
+    <div class="Card">
+        <img src="Images/AdminProgramUserGif.gif" alt="UserLoginGif">
+        <img src="Images/AdminProgramAdminGif.gif" alt="AdminLoginGif">
+        <div class="CardContent">
+            <h1>Admin Program</h1>
+            <p>This was one of my favorite projects to work on. I was challenged by my teacher to make my admin project securely save files in a JSON file with encryption. To achieve this, I used SHA-256 to encrypt the password when an account is created, storing the encrypted password in the JSON file. Upon login, the entered password is converted to SHA-256 and compared to the JSON file password. <br><br>I also added the ability for users to change their own passwords, and users can also delete their own accounts, which removes the corresponding entry from the JSON file. Admins, on the other hand, have the ability to change both the password and the admin status of other users, as well as delete other users' accounts. Overall, it was a ton of fun learning these new concepts and implementing them.</p>
+                <h3>CodingLanguage:</h3>
+                <p>C# Console app</p>
+            <div class="button-container"><a href="https://github.com/th3codingpanda/Admin-program " target="_blank" class="my-button">Github Link</a></div>
+        </div>
+    </div>
+    </div>
+    </section>
+</div>
+    <div class="BackgroundMG Padding50Bottom ">
+        <section class="Hidden2">
+            <div class="CardContainer" >
+    <div class="Card">
+        <img src="Images/DiceGameGif.gif" alt="DicegameGif">
+        <div class="CardContent">
+            <h1>DiceGame</h1>
+            <p>The Dice Game was a fun race between me and some friends to create a JavaScript dice game as quickly as possible. For this, I was able to use a lot of my Yahtzee code and finished it the fastest, with the highest score."</p>
+            <p>Html&amp;Css + javascript</p>
+            <div class="button-container">
+                <a href="dicegamejavascript/Dicegame.html" target="_blank" class="my-button">Play game</a>
+                <a href="GameInfo/DiceGameNL.html" target="_blank" class="my-button">Github Link</a>
+            </div>
+        </div>
+    </div>
+    <div class="Card">
+        <img src="Images/TowerDefenceGif.gif" alt="TowerDefenceGif">
+        <div class="CardContent">
+            <h1>3D TowerDefence</h1>
+            <p>This was a two-person team project. We decided to create a customizable Tower Defense layout for our game. I personally worked on the enemy pathfinding script. Since the layout is dynamic, I chose to implement A* (A-star Pathfinding). The algorithm assigns a cost to each cell and then finds the cheapest path to the endpoint. I also worked on the movement, tower placement, and wall placement scripts, as well as the cost handler for those features.</p>
+            <h3>CodingLanguage &amp; Engine</h3>
+            <p>C# in Unity</p>
+            <div class="button-container"><a href="https://github.com/th3codingpanda/Boips-Tower-Defence" target="_blank" class="my-button">Github Link</a></div>
+        </div>
+    </div>
+
+
+</div>
+</section>
+</div>
+
+
+ <footer class="BackgroundSB Footer" id="Contact">
+    <section class="Hidden2">
+    <h1 class="TextCenter NoMargin">Contact</h1>
+    <h3 class="TextCenter NoMargin">If you have any questions feel free to contact me on:</h3>
+    <div class="Flex">
+    <a href="https://github.com/th3codingpanda" class="Padding5"><img src="Images/GithubIcon.png" class="GrayImage" alt="GitHubIcon" width="20" height="20"></a>
+    <a href="https://www.linkedin.com/in/raf-woud-49686533b/" class="Padding5"><img src="Images/LinkedInIcon.png" class="GrayImage" alt="LinkedInIcon" width="20" height="20"></a>
+    <a href="callto:+31 614100810" class="Padding5 FooterText"><img src="Images/PhoneIcon.png" class="GrayImage" alt="Phone Icon" width="20" height="20">+31 614100810</a>
+    <a href="mailto:RafWoud@pm.me" class="Padding5 FooterText"><img src="Images/MailIcon.png" alt="Email Icon" class="GrayImage" width="20" height="20"> Rafwoud@pm.me</a>
+</div>
+</section>
+ </footer>
+
+</body>
+</html>

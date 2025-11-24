@@ -1,0 +1,75 @@
+h1 {
+  color: rgb(45, 155, 124);
+  text-align: center;
+}
+.pressed {
+  background-color: gray;
+}
+.not_pressed {
+  background-color: whitesmoke;
+}
+label {
+  width: 50px;
+  height: 30px;
+  position: relative;
+  background: #ebebeb;
+  display: block;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4);
+  inset: 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+label::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+input[type="checkbox"] {
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+}
+input[type="checkbox"]:checked + label {
+  background: #1a1d24;
+}
+input[type="checkbox"]:checked + label::after {
+  left: 25px;
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+.lightmode {
+  transition: 1s;
+  background-color: rgb(255, 255, 255);
+}
+.darkmode {
+  transition: 1s;
+  background-color: #1a1d24;
+}
+.scoreboard {
+  color: rgb(45, 155, 124);
+  border: solid rgb(45, 155, 124) 5px;
+  width: 90vw;
+  display: flex;
+}
+.scoreboardleft {
+  width: 50%;
+}
+.scoreboardright {
+  width: 50%;
+}
+.upper_scoreboard:hover {
+  color: #d8860b;
+}
+.lower_scoreboard:hover {
+  color: #d8860b;
+}
+p:hover {
+  cursor: pointer;
+}

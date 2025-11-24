@@ -1,0 +1,12 @@
+body{
+    background-color: aqua;
+}
+img {
+  border: 5px solid black;
+  margin-bottom: 2px;
+}
+button{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+}
